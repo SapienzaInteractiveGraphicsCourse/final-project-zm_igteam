@@ -348,11 +348,11 @@ function onKeyDown(event) {
     startFly = true;
     }
 
-    if(keyCode == 83){ // press S to switch between Orbit Controls and Camera
+    if(keyCode == 87){ // press S to switch between Orbit Controls and Camera
     active = !active;
     }
 
-    if(keyCode == 87){ // press w to switch between third and first person
+    if(keyCode == 83){ // press w to switch between third and first person
     activeCamera = !activeCamera;
     }
 
