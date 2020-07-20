@@ -20,14 +20,28 @@ var soundWind;
 //-------
 
 // variables to control the vehicles animation
-var conta = 0; //used for the vehicles
 
 var move1 = 0;
 var move2 = 0;
 var move3 = 0;
+var move4 = 0;
+var move5 = 0;
+var move6 = 0;
+var move7 = 0;
+var move8 = 0;
+var move9 = 0;
+var move10 = 0;
 
 var sterza1 = 0;
 var sterza2 = Math.PI;
+var sterza3 = 0;
+var sterza4 = 0;
+var sterza5 = Math.PI;
+var sterza6 = Math.PI;
+var sterza7 = 0;
+var sterza8 = 0;
+var sterza9 = 0;
+var sterza10 = 0;
 
 
 // -----------------------
@@ -79,7 +93,7 @@ document.addEventListener("keydown", onKeyDown, false);
 
 //  ---------- loading of the cars ----------------
     camion = root.getObjectByName('camion1');
-    camion.position.y = 20;
+    //camion.position.y = 20;
 
     carBlack = root.getObjectByName('carBlack1');
 
@@ -374,7 +388,7 @@ function onKeyDown(event) {
 // declaration of customized variable for the vehicle movement
     var value = 96;
     var angle = Math.PI/2;
-    var shift = 1;
+    var shift = 0.3;
     var i = 0;
     var sterza;
     var move;
@@ -419,18 +433,102 @@ function onKeyDown(event) {
     muovi_macchina(carPink, move, value, -shift, angle, sterza, time);
   }
 
-  if(root){
+  if(carLimo){
+    var value = 95;
     var angle = Math.PI/2;
-    var shift = -0.6;
+    var shift = 0.4;
+    var sterza;
+    var move;
 
-		for (const wheel of camion.children){
-		  wheel.rotation.y = time;
-		}
+    move3 += shift;
 
-    //move_vehicle(root, angle, shift)
+    if(move3 >= value-shift && move3 < value){sterza3 += angle; }
+    if(move3 >= (3*value)-shift && move3 < 3*value){sterza3 += angle; }
+    if(move3 >= (3*value)-shift && move3 < 3*value){sterza3 += angle;}
+    if(move3 >= 4*value-shift && move3 < 4*value){ // if the square movement is complete we can restart it
+      sterza3 += angle;
+      move3 = 0;
+      }
 
+    move = move3;
+    sterza = sterza3;
+
+    muovi_macchina(carLimo, move, value, shift, angle, sterza, time);
   }
 
+  if(carYellow){
+    var value = 95;
+    var angle = Math.PI/2;
+    var shift = 0.4;
+    var sterza;
+    var move;
+
+    move4 += shift;
+
+    if(move4 >= value-shift && move4 < value){sterza4 += angle; }
+    if(move4 >= (4*value)-shift && move4 < 4*value){sterza4 += angle; }
+    if(move4 >= (4*value)-shift && move4 < 4*value){sterza4 += angle;}
+    if(move4 >= 4*value-shift && move4 < 4*value){ // if the square movement is complete we can restart it
+      sterza4 += angle;
+      move4 = 0;
+      }
+
+    move = move4;
+    sterza = sterza4;
+
+    muovi_macchina(carYellow, move, value, shift, angle, sterza, time);
+  }
+
+
+  if(carPolice){
+    var value = 100;
+    var angle = Math.PI/2;
+    var shift = 0.4;
+    var sterza;
+    var move;
+
+    move5 += shift;
+
+    if(move5 >= value-shift && move5 < value){sterza5 += angle; }
+    if(move5 >= (4*value)-shift && move5 < 4*value){sterza5 += angle; }
+    if(move5 >= (4*value)-shift && move5 < 4*value){sterza5 += angle;}
+    if(move5 >= 4*value-shift && move5 < 4*value){ // if the square movement is complete we can restart it
+      sterza5 += angle;
+      move5 = 0;
+      }
+
+    move = move5;
+    sterza = sterza5;
+
+    muovi_macchina(carPolice, move, value, -shift, angle, sterza, time);
+  }
+
+  if(carBrown){
+    var value = 100;
+    var angle = Math.PI/2;
+    var shift = 0.5;
+    var sterza;
+    var move;
+
+    move6 += shift;
+
+    if(move6 >= value-shift && move6 < value){sterza6 += angle; }
+    if(move6 >= (4*value)-shift && move6 < 4*value){sterza6 += angle; }
+    if(move6 >= (4*value)-shift && move6 < 4*value){sterza6 += angle;}
+    if(move6 >= 4*value-shift && move6 < 4*value){ // if the square movement is complete we can restart it
+      sterza6 += angle;
+      move6 = 0;
+      }
+
+    move = move6;
+    sterza = sterza6;
+
+    muovi_macchina(carBrown, move, value, -shift, angle, sterza, time);
+  }
+
+
+
+// --------- begin of control eagle animation ------
   if(eagle){
 
 
