@@ -27,9 +27,9 @@ var move3 = 0;
 var move4 = 0;
 var move5 = 0;
 var move6 = 0;
-var move7 = 105;
-var move8 = 0;
-var move9 = 0;
+var move7 = 105; // for car red
+var move8 = 100; // for car black
+var move9 = 95; // for car green
 var move10 = 0;
 
 var sterza1 = 0;
@@ -39,8 +39,8 @@ var sterza4 = 0;
 var sterza5 = Math.PI;
 var sterza6 = Math.PI;
 var sterza7 = 3*Math.PI/2;
-var sterza8 = 0;
-var sterza9 = 0;
+var sterza8 = 3*Math.PI/2;
+var sterza9 = Math.PI/2;
 var sterza10 = 0;
 
 
@@ -51,17 +51,6 @@ var sterza10 = 0;
 
 var active  = false;
 var activeCamera = false;
-
-
-var v_counter1 = 0;
-var v_counter2 = 0;
-var v_counter3 = 0;
-var v_counter4 = 0;
-//var angle;
-//var shift;
-
-
-
 
 
 // --------------------------------
@@ -548,6 +537,52 @@ function onKeyDown(event) {
     sterza = sterza7;
 
     muovi_macchina(carRed, move, value, -shift, angle, sterza, time);
+  }
+
+  if(carBlack){
+    var value = 100;
+    var angle = Math.PI/2;
+    var shift = 0.5;
+    var sterza;
+    var move;
+
+    move8 += shift;
+
+    if(move8 >= value-shift && move8 < value){sterza8 += angle; }
+    if(move8 >= (2*value)-shift && move8 < 2*value){sterza8 += angle; }
+    if(move8 >= (3*value)-shift && move8 < 3*value){sterza8 += angle;}
+    if(move8 >= 4*value-shift && move8 < 4*value){ // if the square movement is complete we can restart it
+      sterza8 += angle;
+      move8 = 0;
+      }
+
+    move = move8;
+    sterza = sterza8;
+
+    muovi_macchina(carBlack, move, value, -shift, angle, sterza, time);
+  }
+
+  if(carGreen){
+    var value = 95;
+    var angle = Math.PI/2;
+    var shift = 0.5;
+    var sterza;
+    var move;
+
+    move9 += shift;
+
+    if(move9 >= value-shift && move9 < value){sterza9 += angle; }
+    if(move9 >= (2*value)-shift && move9 < 2*value){sterza9 += angle; }
+    if(move9 >= (3*value)-shift && move9 < 3*value){sterza9 += angle;}
+    if(move9 >= 4*value-shift && move9 < 4*value){ // if the square movement is complete we can restart it
+      sterza9 += angle;
+      move9 = 0;
+      }
+
+    move = move9;
+    sterza = sterza9;
+
+    muovi_macchina(carGreen, move, value, shift, angle, sterza, time);
   }
 
 
