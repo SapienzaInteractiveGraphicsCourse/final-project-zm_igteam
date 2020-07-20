@@ -27,7 +27,7 @@ var move3 = 0;
 var move4 = 0;
 var move5 = 0;
 var move6 = 0;
-var move7 = 0;
+var move7 = 105;
 var move8 = 0;
 var move9 = 0;
 var move10 = 0;
@@ -38,7 +38,7 @@ var sterza3 = 0;
 var sterza4 = 0;
 var sterza5 = Math.PI;
 var sterza6 = Math.PI;
-var sterza7 = 0;
+var sterza7 = 3*Math.PI/2;
 var sterza8 = 0;
 var sterza9 = 0;
 var sterza10 = 0;
@@ -440,10 +440,11 @@ function onKeyDown(event) {
     var sterza;
     var move;
 
+
     move3 += shift;
 
     if(move3 >= value-shift && move3 < value){sterza3 += angle; }
-    if(move3 >= (3*value)-shift && move3 < 3*value){sterza3 += angle; }
+    if(move3 >= (2*value)-shift && move3 < 2*value){sterza3 += angle; }
     if(move3 >= (3*value)-shift && move3 < 3*value){sterza3 += angle;}
     if(move3 >= 4*value-shift && move3 < 4*value){ // if the square movement is complete we can restart it
       sterza3 += angle;
@@ -466,8 +467,8 @@ function onKeyDown(event) {
     move4 += shift;
 
     if(move4 >= value-shift && move4 < value){sterza4 += angle; }
-    if(move4 >= (4*value)-shift && move4 < 4*value){sterza4 += angle; }
-    if(move4 >= (4*value)-shift && move4 < 4*value){sterza4 += angle;}
+    if(move4 >= (2*value)-shift && move4 < 2*value){sterza4 += angle; }
+    if(move4 >= (3*value)-shift && move4 < 3*value){sterza4 += angle;}
     if(move4 >= 4*value-shift && move4 < 4*value){ // if the square movement is complete we can restart it
       sterza4 += angle;
       move4 = 0;
@@ -490,8 +491,8 @@ function onKeyDown(event) {
     move5 += shift;
 
     if(move5 >= value-shift && move5 < value){sterza5 += angle; }
-    if(move5 >= (4*value)-shift && move5 < 4*value){sterza5 += angle; }
-    if(move5 >= (4*value)-shift && move5 < 4*value){sterza5 += angle;}
+    if(move5 >= (2*value)-shift && move5 < 2*value){sterza5 += angle; }
+    if(move5 >= (3*value)-shift && move5 < 3*value){sterza5 += angle;}
     if(move5 >= 4*value-shift && move5 < 4*value){ // if the square movement is complete we can restart it
       sterza5 += angle;
       move5 = 0;
@@ -513,8 +514,8 @@ function onKeyDown(event) {
     move6 += shift;
 
     if(move6 >= value-shift && move6 < value){sterza6 += angle; }
-    if(move6 >= (4*value)-shift && move6 < 4*value){sterza6 += angle; }
-    if(move6 >= (4*value)-shift && move6 < 4*value){sterza6 += angle;}
+    if(move6 >= (2*value)-shift && move6 < 2*value){sterza6 += angle; }
+    if(move6 >= (3*value)-shift && move6 < 3*value){sterza6 += angle;}
     if(move6 >= 4*value-shift && move6 < 4*value){ // if the square movement is complete we can restart it
       sterza6 += angle;
       move6 = 0;
@@ -524,6 +525,29 @@ function onKeyDown(event) {
     sterza = sterza6;
 
     muovi_macchina(carBrown, move, value, -shift, angle, sterza, time);
+  }
+
+  if(carRed){
+    var value = 105;
+    var angle = Math.PI/2;
+    var shift = 0.5;
+    var sterza;
+    var move;
+
+    move7 += shift;
+
+    if(move7 >= value-shift && move7 < value){sterza7 += angle; }
+    if(move7 >= (2*value)-shift && move7 < 2*value){sterza7 += angle; }
+    if(move7 >= (3*value)-shift && move7 < 3*value){sterza7 += angle;}
+    if(move7 >= 4*value-shift && move7 < 4*value){ // if the square movement is complete we can restart it
+      sterza7 += angle;
+      move7 = 0;
+      }
+
+    move = move7;
+    sterza = sterza7;
+
+    muovi_macchina(carRed, move, value, -shift, angle, sterza, time);
   }
 
 
