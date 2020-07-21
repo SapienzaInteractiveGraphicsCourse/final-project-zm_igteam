@@ -30,7 +30,7 @@ var move6 = 0;
 var move7 = 105; // for car red
 var move8 = 103; // for car black
 var move9 = 95; // for car green
-var move10 = 0;
+var move10 = 120; // for car white
 
 var sterza1 = 0;
 var sterza2 = Math.PI;
@@ -41,7 +41,7 @@ var sterza6 = Math.PI;
 var sterza7 = 3*Math.PI/2;
 var sterza8 = 3*Math.PI/2;
 var sterza9 = Math.PI/2;
-var sterza10 = 0;
+var sterza10 = Math.PI/2;
 
 
 // -----------------------
@@ -586,6 +586,29 @@ function onKeyDown(event) {
     sterza = sterza9;
 
     muovi_macchina(carGreen, move, value, shift, angle, sterza, time);
+  }
+
+  if(carWhite){
+    var value = 105;
+    var angle = Math.PI/2;
+    var shift = 0.5;
+    var sterza;
+    var move;
+
+    move10 += shift;
+
+    if(move10 >= value-shift && move10 < value){sterza10 += angle; }
+    if(move10 >= (2*value)-shift && move10 < 2*value){sterza10 += angle; }
+    if(move10 >= (3*value)-shift && move10 < 3*value){sterza10 += angle;}
+    if(move10 >= 4*value-shift && move10 < 4*value){ // if the square movement is complete we can restart it
+      sterza10 += angle;
+      move10 = 0;
+      }
+
+    move = move10;
+    sterza = sterza10;
+
+    muovi_macchina(carWhite, move, value, shift, angle, sterza, time);
   }
 
 
