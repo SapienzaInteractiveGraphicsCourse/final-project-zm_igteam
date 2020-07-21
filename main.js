@@ -24,11 +24,11 @@ var soundWind;
 var move1 = 0;
 var move2 = 0;
 var move3 = 0;
-var move4 = 0;
+var move4 = 10;
 var move5 = 0;
 var move6 = 0;
 var move7 = 105; // for car red
-var move8 = 100; // for car black
+var move8 = 103; // for car black
 var move9 = 95; // for car green
 var move10 = 0;
 
@@ -447,20 +447,21 @@ function onKeyDown(event) {
   }
 
   if(carYellow){
-    var value = 95;
+    var value = 105;
     var angle = Math.PI/2;
-    var shift = 0.4;
+    var shift = 0.8;
     var sterza;
     var move;
 
     move4 += shift;
 
-    if(move4 >= value-shift && move4 < value){sterza4 += angle; }
-    if(move4 >= (2*value)-shift && move4 < 2*value){sterza4 += angle; }
-    if(move4 >= (3*value)-shift && move4 < 3*value){sterza4 += angle;}
+    if(move4 >= value-shift && move4 < value){sterza4 += angle;  }
+    if(move4 >= (2*value)-shift && move4 < 2*value){sterza4 += angle; move4+=10; }
+    if(move4 >= (3*value)-shift && move4 < 3*value){sterza4 += angle; }
     if(move4 >= 4*value-shift && move4 < 4*value){ // if the square movement is complete we can restart it
       sterza4 += angle;
       move4 = 0;
+      move4+=10;
       }
 
     move = move4;
@@ -494,7 +495,7 @@ function onKeyDown(event) {
   }
 
   if(carBrown){
-    var value = 100;
+    var value = 105;
     var angle = Math.PI/2;
     var shift = 0.5;
     var sterza;
@@ -502,18 +503,20 @@ function onKeyDown(event) {
 
     move6 += shift;
 
-    if(move6 >= value-shift && move6 < value){sterza6 += angle; }
-    if(move6 >= (2*value)-shift && move6 < 2*value){sterza6 += angle; }
-    if(move6 >= (3*value)-shift && move6 < 3*value){sterza6 += angle;}
-    if(move6 >= 4*value-shift && move6 < 4*value){ // if the square movement is complete we can restart it
+    if(move6 >= value-shift && move6 < value){sterza6 += angle; move6+= 10;}
+    if(move6 >= (2*value)-shift && move6 < (2*value)){sterza6 += angle; }
+    if(move6 >= (3*value)-shift && move6 < (3*value)){sterza6 += angle; move6+= 10;}
+    if(move6 >= (4*value)-shift && move6 < (4*value)){
       sterza6 += angle;
       move6 = 0;
-      }
+    }
 
     move = move6;
     sterza = sterza6;
 
+
     muovi_macchina(carBrown, move, value, -shift, angle, sterza, time);
+
   }
 
   if(carRed){
@@ -540,7 +543,7 @@ function onKeyDown(event) {
   }
 
   if(carBlack){
-    var value = 100;
+    var value = 103;
     var angle = Math.PI/2;
     var shift = 0.5;
     var sterza;
@@ -548,9 +551,9 @@ function onKeyDown(event) {
 
     move8 += shift;
 
-    if(move8 >= value-shift && move8 < value){sterza8 += angle; }
-    if(move8 >= (2*value)-shift && move8 < 2*value){sterza8 += angle; }
-    if(move8 >= (3*value)-shift && move8 < 3*value){sterza8 += angle;}
+    if(move8 >= value-shift && move8 < value){sterza8 += angle; move8 += 7;}
+    if(move8 >= (2*value)-shift && move8 < 2*value){sterza8 += angle;  }
+    if(move8 >= (3*value)-shift && move8 < 3*value){sterza8 += angle; move8 += 7}
     if(move8 >= 4*value-shift && move8 < 4*value){ // if the square movement is complete we can restart it
       sterza8 += angle;
       move8 = 0;
