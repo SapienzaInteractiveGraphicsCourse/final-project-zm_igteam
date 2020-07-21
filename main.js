@@ -28,7 +28,7 @@ var move4 = 10;
 var move5 = 0;
 var move6 = 0;
 var move7 = 105; // for car red
-var move8 = 103; // for car black
+var move8 = 113; // for car black
 var move9 = 95; // for car green
 var move10 = 120; // for car white
 
@@ -543,17 +543,17 @@ function onKeyDown(event) {
   }
 
   if(carBlack){
-    var value = 103;
+    var value = 105;
     var angle = Math.PI/2;
-    var shift = 0.5;
+    var shift = 0.9;
     var sterza;
     var move;
 
     move8 += shift;
 
-    if(move8 >= value-shift && move8 < value){sterza8 += angle; move8 += 7;}
+    if(move8 >= value-shift && move8 < value){sterza8 += angle; move8 += 8;}
     if(move8 >= (2*value)-shift && move8 < 2*value){sterza8 += angle;  }
-    if(move8 >= (3*value)-shift && move8 < 3*value){sterza8 += angle; move8 += 7}
+    if(move8 >= (3*value)-shift && move8 < 3*value){sterza8 += angle; move8 += 8;}
     if(move8 >= 4*value-shift && move8 < 4*value){ // if the square movement is complete we can restart it
       sterza8 += angle;
       move8 = 0;
@@ -591,15 +591,15 @@ function onKeyDown(event) {
   if(carWhite){
     var value = 105;
     var angle = Math.PI/2;
-    var shift = 0.5;
+    var shift = 0.3;
     var sterza;
     var move;
 
     move10 += shift;
 
-    if(move10 >= value-shift && move10 < value){sterza10 += angle; }
-    if(move10 >= (2*value)-shift && move10 < 2*value){sterza10 += angle; }
-    if(move10 >= (3*value)-shift && move10 < 3*value){sterza10 += angle;}
+    if(move10 >= value-shift && move10 < value){sterza10 += angle; move10+=7; }
+    if(move10 >= (2*value)-shift && move10 < 2*value){sterza10 += angle;  }
+    if(move10 >= (3*value)-shift && move10 < 3*value){sterza10 += angle; move10 += 7;}
     if(move10 >= 4*value-shift && move10 < 4*value){ // if the square movement is complete we can restart it
       sterza10 += angle;
       move10 = 0;
