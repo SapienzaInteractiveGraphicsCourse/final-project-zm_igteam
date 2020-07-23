@@ -25,8 +25,8 @@ var move1 = 0;
 var move2 = 0;
 var move3 = 0;
 var move4 = 10;
-var move5 = 0;
-var move6 = 0;
+var move5 = 8; // for car Police
+var move6 = 0; // for car Brown
 var move7 = 105; // for car red
 var move8 = 113; // for car black
 var move9 = 95; // for car green
@@ -36,10 +36,10 @@ var sterza1 = 0;
 var sterza2 = Math.PI;
 var sterza3 = 0;
 var sterza4 = 0;
-var sterza5 = Math.PI;
-var sterza6 = Math.PI;
+var sterza5 = -Math.PI;
+var sterza6 = -Math.PI;
 var sterza7 = 3*Math.PI/2;
-var sterza8 = 3*Math.PI/2;
+var sterza8 = -Math.PI/2;
 var sterza9 = Math.PI/2;
 var sterza10 = Math.PI/2;
 
@@ -89,6 +89,8 @@ document.addEventListener("keydown", onKeyDown, false);
     carPink = root.getObjectByName('carPink1');
 
     carBrown = root.getObjectByName('carBrown1');
+
+    console.log("rotation of car Brown ", carBrown.rotation.z);
 
     carGreen = root.getObjectByName('carGreen1');
 
@@ -472,7 +474,7 @@ function onKeyDown(event) {
 
 
   if(carPolice){
-    var value = 100;
+    var value = 102;
     var angle = Math.PI/2;
     var shift = 0.4;
     var sterza;
@@ -481,11 +483,12 @@ function onKeyDown(event) {
     move5 += shift;
 
     if(move5 >= value-shift && move5 < value){sterza5 += angle; }
-    if(move5 >= (2*value)-shift && move5 < 2*value){sterza5 += angle; }
+    if(move5 >= (2*value)-shift && move5 < 2*value){sterza5 += angle; move5+=8; }
     if(move5 >= (3*value)-shift && move5 < 3*value){sterza5 += angle;}
     if(move5 >= 4*value-shift && move5 < 4*value){ // if the square movement is complete we can restart it
       sterza5 += angle;
       move5 = 0;
+      move5+=8;
       }
 
     move = move5;
