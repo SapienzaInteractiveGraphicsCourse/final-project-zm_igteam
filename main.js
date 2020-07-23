@@ -29,7 +29,7 @@ var move5 = 8; // for car Police
 var move6 = 0; // for car Brown
 var move7 = 103; // for car red
 var move8 = 113; // for car black
-var move9 = 95; // for car green
+var move9 = 92; // for car green
 var move10 = 120; // for car white
 
 var sterza1 = 0;
@@ -569,7 +569,7 @@ function onKeyDown(event) {
   }
 
   if(carGreen){
-    var value = 95;
+    var value = 92;
     var angle = Math.PI/2;
     var shift = 0.5;
     var sterza;
