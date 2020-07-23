@@ -7,7 +7,7 @@ var flag_eagle2 = 0;
 var flag_eagle3 = 0;
 var flag_eagle4 = 0;
 var flag_eagle5 = 0;
-var eagle_moves = [];
+var eagle_moves = []; // bi-dimensional array that contains all the movements positions
 
 // eagle variables
 var eagle;
@@ -141,19 +141,13 @@ eagle_moves = [lerp(2, 12, wingSpeed).concat(lerp(12, 2, wingSpeed)), // for the
                  lerp(0, 0, angleSpeed), // turn right at the ferris wheel (2)
                  lerp(0, 0, angleSpeed), // turn towards the skyscraper (1)
                  lerp(0, 0, angleSpeed), // turn towards the skyscraper (2)
-
                )
-
              ];
-
-
-
-
-
 
 
 function move_eagle(){
 
+// ------ static movement -------
   //body.position.y = eagle_moves[0][flag_eagle];
   rightWing.rotation.y = eagle_moves[1][flag_eagle];
   leftWing.rotation.y = -eagle_moves[1][flag_eagle];
@@ -178,6 +172,7 @@ function move_eagle(){
   body.rotation.z = eagle_moves[9][flag_eagle4];
   body.rotation.y = eagle_moves[10][flag_eagle5];
 
+// -------- dynamic movement ------------
   if(startFly){
 
   flag_eagle = (flag_eagle >= eagle_moves[0].length) ? 0 : flag_eagle+1;
@@ -189,8 +184,6 @@ function move_eagle(){
   if(flag_eagle5 >= eagle_moves[8].length){startFly = false; }
 
   }
-
-
 
   // ----------------
 

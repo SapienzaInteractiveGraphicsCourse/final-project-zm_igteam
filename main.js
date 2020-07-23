@@ -1,25 +1,25 @@
+// import of the needed libraries
 import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/build/three.module.js';
 import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/loaders/GLTFLoader.js';
 
 
 
-
-// -----------
-var asse;
-var aeroporto;
+// --- Declaration of variables for the main scene ------
 var root;
 var renderer, camera, scene, controls;
-
 //---------
+
+
 // sounds variables
 var sound;
 var soundEagle;
 var soundWind;
-
 //-------
 
 // variables to control the vehicles animation
+// each move is the initial value of movement of the corresponding value
+// that will be then used in the move vehicle function
 
 var move1 = 0;
 var move2 = 0;
@@ -31,7 +31,7 @@ var move7 = 103; // for car red
 var move8 = 113; // for car black
 var move9 = 92; // for car green
 var move10 = 120; // for car white
-
+// the same reasoning is applyed for the turning variables
 var sterza1 = 0;
 var sterza2 = Math.PI;
 var sterza3 = 0;
@@ -42,30 +42,25 @@ var sterza7 = -Math.PI/2;
 var sterza8 = -Math.PI/2;
 var sterza9 = Math.PI/2;
 var sterza10 = Math.PI/2;
-
-
 // -----------------------
 
 
 // booleans for camera switch
-
 var active  = false;
 var activeCamera = false;
-
-
 // --------------------------------
 
 // variables for the Ferris wheel
-
 var axle;
 var upper_ring;
-
 // ----------------------------------
 
+// here is added the event listener for the keyboard commands
 document.addEventListener("keydown", onKeyDown, false);
 
 
 // ----------------------------
+// now we load the main scene - the city
     const gltfLoader = new GLTFLoader();
 
     gltfLoader.load('models/definitiveCity.glb', (gltf) => {
@@ -90,8 +85,6 @@ document.addEventListener("keydown", onKeyDown, false);
 
     carBrown = root.getObjectByName('carBrown1');
 
-    console.log("rotation of car Brown ", carBrown.rotation.z);
-
     carGreen = root.getObjectByName('carGreen1');
 
     carLimo = root.getObjectByName('carLimo1');
@@ -109,7 +102,7 @@ document.addEventListener("keydown", onKeyDown, false);
 
 
 
-// ----------- variables for the ferris wheel -------------
+// ----------- retrieving variables for the ferris wheel -------------
 
     axle = root.getObjectByName('AXLE');
 
@@ -121,7 +114,7 @@ document.addEventListener("keydown", onKeyDown, false);
       eagle = gltf.scene;
       scene.add(eagle);
 
-
+// we add the shadows also to the eagle
       eagle.traverse((obj) => {
           if (obj.castShadow !== undefined) {
             obj.castShadow = true;
@@ -129,14 +122,11 @@ document.addEventListener("keydown", onKeyDown, false);
           }
         });
 
-
+// now we retrieve the single parts of eagle used in the animation
       body = eagle.getObjectByName('eagleBody');
       //scene.add(body);
-      console.log("body rotation x: ",body.rotation.x);
 
       head = eagle.getObjectByName('neck');
-      //head.position.y = 8.0;
-
 
       rightWing = eagle.getObjectByName('rightWing');
       leftWing = eagle.getObjectByName('leftWing');
@@ -150,15 +140,11 @@ document.addEventListener("keydown", onKeyDown, false);
       upperBeak = eagle.getObjectByName('upperBeakPart');
       lowerBeak = eagle.getObjectByName('lowerBeakPart');
 
-      body.position.set(-2, 180, -115);
-      //eagle.rotation.x = (Math.PI);
+      body.position.set(-2, 180, -115); // initial position of the eagle set in the tip of the main tower
 
-
-      //console.log(dumpObject(eagle).join('\n'));  // print the Scenegraph
+      //console.log(dumpObject(eagle).join('\n'));  //this prints the Scenegraph
 
     });
-
-
 
 // -------------- end of eagle loading ---------------------------------------------
 
@@ -232,13 +218,15 @@ function main() {
 
 	// ------------------------------------------------------
 
+// with this we can control the scene with the mouse's left key holding
   controls = new OrbitControls(camera, canvas);
   controls.target.set(0, 5, 0);
   controls.update();
+//---------
 
   scene = new THREE.Scene();
   scene.background = new THREE.Color('#DEFEFF');
-
+// now we load the background texture
   {
     const loader = new THREE.CubeTextureLoader();
     const texture = loader.load([
@@ -329,22 +317,19 @@ function main() {
     return needResize;
   }
 
+// ----------------------
   function render() {
-
 
     if (resizeRendererToDisplaySize(renderer)) {
       const canvas = renderer.domElement;
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
       camera.updateProjectionMatrix();
     }
-
-
     renderer.render(scene, camera);
-	//animate();
-  //  requestAnimationFrame(render);
   }
+// -----------------------
 
-// -----------------------------
+// -----------function that handles the keys interaction ------------------
 function onKeyDown(event) {
 
     var keyCode = event.which;
@@ -365,15 +350,17 @@ function onKeyDown(event) {
     soundEagle.play();
     }
 
-    //requestAnimationFrame(render);
 }
 // --------------------------
 
 
  function animate(time){
 
+// time is ised for basic movements like rotation of the wheels
   time *= 0.001	;  // convert to seconds
 
+/* for each car we have a piece of code that sets all the relative parameters
+before to call the move vehicle function */
 
   if(camion){
 // declaration of customized variable for the vehicle movement
@@ -400,7 +387,7 @@ function onKeyDown(event) {
     muovi_macchina(camion, move, value, shift, angle, sterza, time);
   }
 
-
+// ----------
   if(carPink){
     var value = 95;
     var angle = Math.PI/2;
@@ -423,14 +410,13 @@ function onKeyDown(event) {
 
     muovi_macchina(carPink, move, value, -shift, angle, sterza, time);
   }
-
+// ----------
   if(carLimo){
     var value = 95;
     var angle = Math.PI/2;
     var shift = 0.4;
     var sterza;
     var move;
-
 
     move3 += shift;
 
@@ -447,7 +433,7 @@ function onKeyDown(event) {
 
     muovi_macchina(carLimo, move, value, shift, angle, sterza, time);
   }
-
+// ----------
   if(carYellow){
     var value = 105;
     var angle = Math.PI/2;
@@ -471,8 +457,7 @@ function onKeyDown(event) {
 
     muovi_macchina(carYellow, move, value, shift, angle, sterza, time);
   }
-
-
+// ----------
   if(carPolice){
     var value = 102;
     var angle = Math.PI/2;
@@ -496,7 +481,7 @@ function onKeyDown(event) {
 
     muovi_macchina(carPolice, move, value, -shift, angle, sterza, time);
   }
-
+// ----------
   if(carBrown){
     var value = 105;
     var angle = Math.PI/2;
@@ -517,11 +502,9 @@ function onKeyDown(event) {
     move = move6;
     sterza = sterza6;
 
-
     muovi_macchina(carBrown, move, value, -shift, angle, sterza, time);
-
   }
-
+// ----------
   if(carRed){
     var value = 103;
     var angle = Math.PI/2;
@@ -544,7 +527,7 @@ function onKeyDown(event) {
 
     muovi_macchina(carRed, move, value, -shift, angle, sterza, time);
   }
-
+// ----------
   if(carBlack){
     var value = 105;
     var angle = Math.PI/2;
@@ -567,7 +550,7 @@ function onKeyDown(event) {
 
     muovi_macchina(carBlack, move, value, -shift, angle, sterza, time);
   }
-
+// ----------
   if(carGreen){
     var value = 92;
     var angle = Math.PI/2;
@@ -590,7 +573,7 @@ function onKeyDown(event) {
 
     muovi_macchina(carGreen, move, value, shift, angle, sterza, time);
   }
-
+// ----------
   if(carWhite){
     var value = 105;
     var angle = Math.PI/2;
@@ -619,9 +602,7 @@ function onKeyDown(event) {
 // --------- begin of control eagle animation ------
   if(eagle){
 
-
-    // enable first person camera on the eagle
-
+    // enable first/third person camera on the eagle
     if(active){
 		var relativeCameraOffset = new THREE.Vector3(0,-5, -5);
     var cameraOffset = relativeCameraOffset.applyMatrix4(body.matrixWorld );
@@ -635,15 +616,14 @@ function onKeyDown(event) {
     if(activeCamera){body.add(camera);}
     else {body.remove(camera); } //switch between 1st and 3rd person
     }
-
     //console.log("startFly is: ",startFly);
-
     if(startFly){
     move_eagle();
     }
 
   }
 
+// control for the Ferris Wheel animation
   if(axle){
     axle.rotation.y = 0.5*time;
     for (const pezzo of axle.children){
