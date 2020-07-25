@@ -12,26 +12,26 @@ var carWhite;
 
 
 
-function muovi_macchina(macchina, muovi, valore, sposta, angolo, sterza, time){
+function move_vehicle(macchina, move, value, shift, turn, time){
 
   for (const wheel of macchina.children) {
     wheel.rotation.y = 2*time;
   }
 
-  if(muovi < valore) { //if (x - x+value) < 0
-  macchina.rotation.z =  lerp2(macchina.rotation.z, sterza, 0.04)
-  macchina.position.x -= sposta;
+  if(move < value) { //if (x - x+value) < 0
+  macchina.rotation.z =  lerp2(macchina.rotation.z, turn, 0.04)
+  macchina.position.x -= shift;
   }
-  else if(muovi < 2*valore){
-    macchina.rotation.z =  lerp2(macchina.rotation.z, sterza, 0.04)
-    macchina.position.z -= sposta;
+  else if(move < 2*value){
+    macchina.rotation.z =  lerp2(macchina.rotation.z, turn, 0.04)
+    macchina.position.z -= shift;
     }
-  else if(muovi < 3*valore){
-    macchina.rotation.z =  lerp2(macchina.rotation.z, sterza, 0.04)
-    macchina.position.x += sposta;
+  else if(move < 3*value){
+    macchina.rotation.z =  lerp2(macchina.rotation.z, turn, 0.04)
+    macchina.position.x += shift;
     }
   else{
-    macchina.rotation.z =  lerp2(macchina.rotation.z, sterza, 0.04)
-    macchina.position.z += sposta;
+    macchina.rotation.z =  lerp2(macchina.rotation.z, turn, 0.04)
+    macchina.position.z += shift;
     }
 }

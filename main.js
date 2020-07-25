@@ -384,7 +384,7 @@ before to call the move vehicle function */
     move = move1;
     sterza = sterza1;
 // muovi macchina is called with all local variables instantiated
-    muovi_macchina(camion, move, value, shift, angle, sterza, time);
+    move_vehicle(camion, move, value, shift, sterza, time);
   }
 
 // ----------
@@ -408,7 +408,7 @@ before to call the move vehicle function */
     move = move2;
     sterza = sterza2;
 
-    muovi_macchina(carPink, move, value, -shift, angle, sterza, time);
+    move_vehicle(carPink, move, value, -shift, sterza, time);
   }
 // ----------
   if(carLimo){
@@ -431,7 +431,7 @@ before to call the move vehicle function */
     move = move3;
     sterza = sterza3;
 
-    muovi_macchina(carLimo, move, value, shift, angle, sterza, time);
+    move_vehicle(carLimo, move, value, shift, sterza, time);
   }
 // ----------
   if(carYellow){
@@ -455,7 +455,7 @@ before to call the move vehicle function */
     move = move4;
     sterza = sterza4;
 
-    muovi_macchina(carYellow, move, value, shift, angle, sterza, time);
+    move_vehicle(carYellow, move, value, shift, sterza, time);
   }
 // ----------
   if(carPolice){
@@ -479,7 +479,7 @@ before to call the move vehicle function */
     move = move5;
     sterza = sterza5;
 
-    muovi_macchina(carPolice, move, value, -shift, angle, sterza, time);
+    move_vehicle(carPolice, move, value, -shift, sterza, time);
   }
 // ----------
   if(carBrown){
@@ -502,7 +502,7 @@ before to call the move vehicle function */
     move = move6;
     sterza = sterza6;
 
-    muovi_macchina(carBrown, move, value, -shift, angle, sterza, time);
+    move_vehicle(carBrown, move, value, -shift, sterza, time);
   }
 // ----------
   if(carRed){
@@ -525,7 +525,7 @@ before to call the move vehicle function */
     move = move7;
     sterza = sterza7;
 
-    muovi_macchina(carRed, move, value, -shift, angle, sterza, time);
+    move_vehicle(carRed, move, value, -shift, sterza, time);
   }
 // ----------
   if(carBlack){
@@ -548,7 +548,7 @@ before to call the move vehicle function */
     move = move8;
     sterza = sterza8;
 
-    muovi_macchina(carBlack, move, value, -shift, angle, sterza, time);
+    move_vehicle(carBlack, move, value, -shift, sterza, time);
   }
 // ----------
   if(carGreen){
@@ -571,7 +571,7 @@ before to call the move vehicle function */
     move = move9;
     sterza = sterza9;
 
-    muovi_macchina(carGreen, move, value, shift, angle, sterza, time);
+    move_vehicle(carGreen, move, value, shift, sterza, time);
   }
 // ----------
   if(carWhite){
@@ -594,7 +594,7 @@ before to call the move vehicle function */
     move = move10;
     sterza = sterza10;
 
-    muovi_macchina(carWhite, move, value, shift, angle, sterza, time);
+    move_vehicle(carWhite, move, value, shift, sterza, time);
   }
 
 
