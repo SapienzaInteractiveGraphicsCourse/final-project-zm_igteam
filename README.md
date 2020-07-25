@@ -2,6 +2,8 @@
 
 ## Eagle Flight
 
+![Alt text](images/eagleFlight.jpg?raw=true "Eagle_Flight")
+
 final-project-zm_igteam 
 created by Damiano Zappia & Gianluca Maselli for the IG course at Sapienza University of Rome
 A.Y. 2019/2020 - prof. Marco Schaerf
