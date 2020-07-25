@@ -21,6 +21,6 @@ Commands for the user interaction are :
 **A**: By pressing this button the eagle scream is emitted. This is implement by using an \texttt{audio} (explained in Section~\ref{audio}). Every time the user click this button the scream is emitted.
 
 
-A demo of the project is available at this link : 
+## A demo of the project is available at this link : 
 
 https://sapienzainteractivegraphicscourse.github.io/final-project-zm_igteam/homePage.html
