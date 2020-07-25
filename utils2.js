@@ -1,4 +1,4 @@
-//interpolation function
+//interpolation function, used to make the veihcles turn
 function lerp(current, target, fraction){
 
     /*var array_of_points = [];
@@ -15,6 +15,8 @@ function lerp(current, target, fraction){
     //return array_of_points;
   }
 
+
+// the following function prints the scenegraph of an object when used
   function dumpObject(obj, lines = [], isLast = true, prefix = '') {
     const localPrefix = isLast ? '└─' : '├─';
     lines.push(`${prefix}${prefix ? localPrefix : ''}${obj.name || '*no-name*'} [${obj.type}]`);

@@ -32,16 +32,16 @@ var move8 = 113; // for car black
 var move9 = 92; // for car green
 var move10 = 120; // for car white
 // the same reasoning is applyed for the turning variables
-var sterza1 = 0;
-var sterza2 = Math.PI;
-var sterza3 = 0;
-var sterza4 = 0;
-var sterza5 = -Math.PI;
-var sterza6 = -Math.PI;
-var sterza7 = -Math.PI/2;
-var sterza8 = -Math.PI/2;
-var sterza9 = Math.PI/2;
-var sterza10 = Math.PI/2;
+var turn1 = 0;
+var turn2 = Math.PI;
+var turn3 = 0;
+var turn4 = 0;
+var turn5 = -Math.PI;
+var turn6 = -Math.PI;
+var turn7 = -Math.PI/2;
+var turn8 = -Math.PI/2;
+var turn9 = Math.PI/2;
+var turn10 = Math.PI/2;
 // -----------------------
 
 
@@ -368,23 +368,23 @@ before to call the move vehicle function */
     var angle = Math.PI/2;
     var shift = 0.3;
     var i = 0;
-    var sterza;
+    var turn;
     var move;
 // incrementation of the move that controls when to turn and change direction
     move1 += shift;
 // here we control the 4 directions to follow and the turning variable
-    if(move1 >= value-shift && move1 < value){sterza1 += angle; }
-    if(move1 >= (2*value)-shift && move1 < 2*value){sterza1 += angle; }
-    if(move1 >= (3*value)-shift && move1 < 3*value){sterza1 += angle;}
+    if(move1 >= value-shift && move1 < value){turn1 += angle; }
+    if(move1 >= (2*value)-shift && move1 < 2*value){turn1 += angle; }
+    if(move1 >= (3*value)-shift && move1 < 3*value){turn1 += angle;}
     if(move1 >= 4*value-shift && move1 < 4*value){ // if the square movement is complete we can restart it
-      sterza1 += angle;
+      turn1 += angle;
       move1 = 0;
       }
 // local variables are set each time to be send to the muovi_macchina
     move = move1;
-    sterza = sterza1;
+    turn = turn1;
 // muovi macchina is called with all local variables instantiated
-    move_vehicle(camion, move, value, shift, sterza, time);
+    move_vehicle(camion, move, value, shift, turn, time);
   }
 
 // ----------
@@ -392,209 +392,209 @@ before to call the move vehicle function */
     var value = 95;
     var angle = Math.PI/2;
     var shift = 0.5;
-    var sterza;
+    var turn;
     var move;
 
     move2 += shift;
 
-    if(move2 >= value-shift && move2 < value){sterza2 += angle; }
-    if(move2 >= (2*value)-shift && move2 < 2*value){sterza2 += angle; }
-    if(move2 >= (3*value)-shift && move2 < 3*value){sterza2 += angle;}
+    if(move2 >= value-shift && move2 < value){turn2 += angle; }
+    if(move2 >= (2*value)-shift && move2 < 2*value){turn2 += angle; }
+    if(move2 >= (3*value)-shift && move2 < 3*value){turn2 += angle;}
     if(move2 >= 4*value-shift && move2 < 4*value){ // if the square movement is complete we can restart it
-      sterza2 += angle;
+      turn2 += angle;
       move2 = 0;
       }
 
     move = move2;
-    sterza = sterza2;
+    turn = turn2;
 
-    move_vehicle(carPink, move, value, -shift, sterza, time);
+    move_vehicle(carPink, move, value, -shift, turn, time);
   }
 // ----------
   if(carLimo){
     var value = 95;
     var angle = Math.PI/2;
     var shift = 0.4;
-    var sterza;
+    var turn;
     var move;
 
     move3 += shift;
 
-    if(move3 >= value-shift && move3 < value){sterza3 += angle; }
-    if(move3 >= (2*value)-shift && move3 < 2*value){sterza3 += angle; }
-    if(move3 >= (3*value)-shift && move3 < 3*value){sterza3 += angle;}
+    if(move3 >= value-shift && move3 < value){turn3 += angle; }
+    if(move3 >= (2*value)-shift && move3 < 2*value){turn3 += angle; }
+    if(move3 >= (3*value)-shift && move3 < 3*value){turn3 += angle;}
     if(move3 >= 4*value-shift && move3 < 4*value){ // if the square movement is complete we can restart it
-      sterza3 += angle;
+      turn3 += angle;
       move3 = 0;
       }
 
     move = move3;
-    sterza = sterza3;
+    turn = turn3;
 
-    move_vehicle(carLimo, move, value, shift, sterza, time);
+    move_vehicle(carLimo, move, value, shift, turn, time);
   }
 // ----------
   if(carYellow){
     var value = 105;
     var angle = Math.PI/2;
     var shift = 0.5;
-    var sterza;
+    var turn;
     var move;
 
     move4 += shift;
 
-    if(move4 >= value-shift && move4 < value){sterza4 += angle;  }
-    if(move4 >= (2*value)-shift && move4 < 2*value){sterza4 += angle; move4+=10; }
-    if(move4 >= (3*value)-shift && move4 < 3*value){sterza4 += angle; }
+    if(move4 >= value-shift && move4 < value){turn4 += angle;  }
+    if(move4 >= (2*value)-shift && move4 < 2*value){turn4 += angle; move4+=10; }
+    if(move4 >= (3*value)-shift && move4 < 3*value){turn4 += angle; }
     if(move4 >= 4*value-shift && move4 < 4*value){ // if the square movement is complete we can restart it
-      sterza4 += angle;
+      turn4 += angle;
       move4 = 0;
       move4+=10;
       }
 
     move = move4;
-    sterza = sterza4;
+    turn = turn4;
 
-    move_vehicle(carYellow, move, value, shift, sterza, time);
+    move_vehicle(carYellow, move, value, shift, turn, time);
   }
 // ----------
   if(carPolice){
     var value = 102;
     var angle = Math.PI/2;
     var shift = 0.4;
-    var sterza;
+    var turn;
     var move;
 
     move5 += shift;
 
-    if(move5 >= value-shift && move5 < value){sterza5 += angle; }
-    if(move5 >= (2*value)-shift && move5 < 2*value){sterza5 += angle; move5+=8; }
-    if(move5 >= (3*value)-shift && move5 < 3*value){sterza5 += angle;}
+    if(move5 >= value-shift && move5 < value){turn5 += angle; }
+    if(move5 >= (2*value)-shift && move5 < 2*value){turn5 += angle; move5+=8; }
+    if(move5 >= (3*value)-shift && move5 < 3*value){turn5 += angle;}
     if(move5 >= 4*value-shift && move5 < 4*value){ // if the square movement is complete we can restart it
-      sterza5 += angle;
+      turn5 += angle;
       move5 = 0;
       move5+=8;
       }
 
     move = move5;
-    sterza = sterza5;
+    turn = turn5;
 
-    move_vehicle(carPolice, move, value, -shift, sterza, time);
+    move_vehicle(carPolice, move, value, -shift, turn, time);
   }
 // ----------
   if(carBrown){
     var value = 105;
     var angle = Math.PI/2;
     var shift = 0.5;
-    var sterza;
+    var turn;
     var move;
 
     move6 += shift;
 
-    if(move6 >= value-shift && move6 < value){sterza6 += angle; move6+= 10;}
-    if(move6 >= (2*value)-shift && move6 < (2*value)){sterza6 += angle; }
-    if(move6 >= (3*value)-shift && move6 < (3*value)){sterza6 += angle; move6+= 10;}
+    if(move6 >= value-shift && move6 < value){turn6 += angle; move6+= 10;}
+    if(move6 >= (2*value)-shift && move6 < (2*value)){turn6 += angle; }
+    if(move6 >= (3*value)-shift && move6 < (3*value)){turn6 += angle; move6+= 10;}
     if(move6 >= (4*value)-shift && move6 < (4*value)){
-      sterza6 += angle;
+      turn6 += angle;
       move6 = 0;
     }
 
     move = move6;
-    sterza = sterza6;
+    turn = turn6;
 
-    move_vehicle(carBrown, move, value, -shift, sterza, time);
+    move_vehicle(carBrown, move, value, -shift, turn, time);
   }
 // ----------
   if(carRed){
     var value = 103;
     var angle = Math.PI/2;
     var shift = 0.5;
-    var sterza;
+    var turn;
     var move;
 
     move7 += shift;
 
-    if(move7 >= value-shift && move7 < value){sterza7 += angle; }
-    if(move7 >= (2*value)-shift && move7 < 2*value){sterza7 += angle; }
-    if(move7 >= (3*value)-shift && move7 < 3*value){sterza7 += angle;}
+    if(move7 >= value-shift && move7 < value){turn7 += angle; }
+    if(move7 >= (2*value)-shift && move7 < 2*value){turn7 += angle; }
+    if(move7 >= (3*value)-shift && move7 < 3*value){turn7 += angle;}
     if(move7 >= 4*value-shift && move7 < 4*value){ // if the square movement is complete we can restart it
-      sterza7 += angle;
+      turn7 += angle;
       move7 = 0;
       }
 
     move = move7;
-    sterza = sterza7;
+    turn = turn7;
 
-    move_vehicle(carRed, move, value, -shift, sterza, time);
+    move_vehicle(carRed, move, value, -shift, turn, time);
   }
 // ----------
   if(carBlack){
     var value = 105;
     var angle = Math.PI/2;
-    var shift = 0.9;
-    var sterza;
+    var shift = 0.5;
+    var turn;
     var move;
 
     move8 += shift;
 
-    if(move8 >= value-shift && move8 < value){sterza8 += angle; move8 += 8;}
-    if(move8 >= (2*value)-shift && move8 < 2*value){sterza8 += angle;  }
-    if(move8 >= (3*value)-shift && move8 < 3*value){sterza8 += angle; move8 += 8;}
+    if(move8 >= value-shift && move8 < value){turn8 += angle; move8 += 8;}
+    if(move8 >= (2*value)-shift && move8 < 2*value){turn8 += angle;  }
+    if(move8 >= (3*value)-shift && move8 < 3*value){turn8 += angle; move8 += 8;}
     if(move8 >= 4*value-shift && move8 < 4*value){ // if the square movement is complete we can restart it
-      sterza8 += angle;
+      turn8 += angle;
       move8 = 0;
       }
 
     move = move8;
-    sterza = sterza8;
+    turn = turn8;
 
-    move_vehicle(carBlack, move, value, -shift, sterza, time);
+    move_vehicle(carBlack, move, value, -shift, turn, time);
   }
 // ----------
   if(carGreen){
     var value = 92;
     var angle = Math.PI/2;
     var shift = 0.5;
-    var sterza;
+    var turn;
     var move;
 
     move9 += shift;
 
-    if(move9 >= value-shift && move9 < value){sterza9 += angle; }
-    if(move9 >= (2*value)-shift && move9 < 2*value){sterza9 += angle; }
-    if(move9 >= (3*value)-shift && move9 < 3*value){sterza9 += angle;}
+    if(move9 >= value-shift && move9 < value){turn9 += angle; }
+    if(move9 >= (2*value)-shift && move9 < 2*value){turn9 += angle; }
+    if(move9 >= (3*value)-shift && move9 < 3*value){turn9 += angle;}
     if(move9 >= 4*value-shift && move9 < 4*value){ // if the square movement is complete we can restart it
-      sterza9 += angle;
+      turn9 += angle;
       move9 = 0;
       }
 
     move = move9;
-    sterza = sterza9;
+    turn = turn9;
 
-    move_vehicle(carGreen, move, value, shift, sterza, time);
+    move_vehicle(carGreen, move, value, shift, turn, time);
   }
 // ----------
   if(carWhite){
     var value = 105;
     var angle = Math.PI/2;
     var shift = 0.3;
-    var sterza;
+    var turn;
     var move;
 
     move10 += shift;
 
-    if(move10 >= value-shift && move10 < value){sterza10 += angle; move10+=7; }
-    if(move10 >= (2*value)-shift && move10 < 2*value){sterza10 += angle;  }
-    if(move10 >= (3*value)-shift && move10 < 3*value){sterza10 += angle; move10 += 7;}
+    if(move10 >= value-shift && move10 < value){turn10 += angle; move10+=7; }
+    if(move10 >= (2*value)-shift && move10 < 2*value){turn10 += angle;  }
+    if(move10 >= (3*value)-shift && move10 < 3*value){turn10 += angle; move10 += 7;}
     if(move10 >= 4*value-shift && move10 < 4*value){ // if the square movement is complete we can restart it
-      sterza10 += angle;
+      turn10 += angle;
       move10 = 0;
       }
 
     move = move10;
-    sterza = sterza10;
+    turn = turn10;
 
-    move_vehicle(carWhite, move, value, shift, sterza, time);
+    move_vehicle(carWhite, move, value, shift, turn, time);
   }
 
 
