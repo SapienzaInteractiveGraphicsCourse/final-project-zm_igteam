@@ -22,15 +22,15 @@ var leftPaw;
 var upperBeak;
 var lowerBeak;
 
-var startFly = false;
+var startFly = false; // used to control the restarting of eagle movement
 
 
 
 // ------------------- points for the eagle movement ----------------------
 //         p0  p1   p2    p3    p4    p5     p6    p7    p8    p9    p10   p11   p12   p13   p14   p15    p16   p17   p18   p19   p20  p21    p22   p23   p24   p25   p26  p27
-var bzX = [0,  0,    0,   -70,  -225, -225,  -70,   36,   50,   50,   50,   50,   50,   50,   180,  200,  200, -220, -220, -220,  170,  170,  150,  110,  90,   30,   58,  0];  // the positions are added to the initial one, set in the eagle loading
+var bzX = [0,  0,    0,   -70,  -225, -225,  -70,   36,   50,   50,   50,   50,   50,   50,   180,  200,  200, -220, -220, -220,  170,  170,  150,  110,  90,   30,   58,  0];  // the positions are added to the 0,0,0
 var bzY = [0,  0, -220, -140, -140,  -140,  -140,  -130, -120, -100, -220,  60,  -140, -140, -140, -100, -100, -100, -100, -100, -100, -100, -120, -120,  -120, -100,  0,  0];
-var bzZ = [0,  20,  20,   20,   20,   165,   165,  165,  165,  176,  350,  350,  176, -180,  -64,   16,   450,  450,  16,  -150, -150,  16,   35,   55,    55,  -65,  -10, 0];
+var bzZ = [0,  20,  20,   20,   20,   165,   165,  165,  165,  176,  350,  350,  176, -180,  -64,   16,   450,  450,  16,  -150, -120,  -10,   35,   55,    55,  -65,  -10, 0];
 
 
 eagle_moves = [lerp(2, 12, wingSpeed).concat(lerp(12, 2, wingSpeed)), // for the torso

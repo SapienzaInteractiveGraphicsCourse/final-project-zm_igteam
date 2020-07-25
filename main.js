@@ -437,7 +437,7 @@ before to call the move vehicle function */
   if(carYellow){
     var value = 105;
     var angle = Math.PI/2;
-    var shift = 0.8;
+    var shift = 0.5;
     var sterza;
     var move;
 
