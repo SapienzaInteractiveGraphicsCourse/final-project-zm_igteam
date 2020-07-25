@@ -11,6 +11,7 @@ Inside the city you can find several animated things, like cars, rotating Ferris
 The eagle is the principal subject of the application. It starting from the tip of the highest skyscraper of the town, flies around all the city making a complex path around, allowing the user to set the view to third person watching the stunning movement of the bird around the buildings, or setting it to first person being totally involved in the fly like if he was himself the eagle. 
 
 Commands for the user interaction are :
+
 **space bar**: By pressing this button on the keyboard the eagle starts its own animation, flying through the buildings. When the animation is terminated, the user can restart it by pressing the same button again. 
     
 **W**: By pressing this button the third person view on the eagle is activated. This view can be exchanged anytime with the first person view, with the following key command. Also, when the user is in first person view, by pressing \texttt{w} again, he can change the camera to return controllable by the mouse.
