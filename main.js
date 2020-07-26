@@ -366,7 +366,7 @@ before to call the move vehicle function */
 // declaration of customized variable for the vehicle movement
     var value = 96;
     var angle = Math.PI/2;
-    var shift = 0.3;
+    var shift = 0.2;
     var i = 0;
     var turn;
     var move;
@@ -437,7 +437,7 @@ before to call the move vehicle function */
   if(carYellow){
     var value = 105;
     var angle = Math.PI/2;
-    var shift = 0.5;
+    var shift = 0.2;
     var turn;
     var move;
 
@@ -508,7 +508,7 @@ before to call the move vehicle function */
   if(carRed){
     var value = 103;
     var angle = Math.PI/2;
-    var shift = 0.5;
+    var shift = 0.3;
     var turn;
     var move;
 
