@@ -602,6 +602,8 @@ before to call the move vehicle function */
 // --------- begin of control eagle animation ------
   if(eagle){
 
+    move_static();
+
     // enable first/third person camera on the eagle
     if(active){
 		var relativeCameraOffset = new THREE.Vector3(0,-5, -5);
@@ -626,10 +628,10 @@ before to call the move vehicle function */
 // control for the Ferris Wheel animation
   if(axle){
     axle.rotation.y = 0.5*time;
-    for (const pezzo of axle.children){
-      for(const piol of pezzo.children) {
-        if(piol.name.includes("SEAT")) {
-           piol.rotation.z = 0.5*time + Math.PI;
+    for (const piece of axle.children){
+      for(const peg of piece.children) {
+        if(peg.name.includes("SEAT")) {
+           peg.rotation.z = 0.5*time + Math.PI;
            //console.log(piol.name);
           }
       }

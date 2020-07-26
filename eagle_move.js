@@ -145,10 +145,10 @@ eagle_moves = [lerp(2, 12, wingSpeed).concat(lerp(12, 2, wingSpeed)), // for the
              ];
 
 
-function move_eagle(){
+function move_static(){
 
-// ------ static movement -------
-  //body.position.y += eagle_moves[0][flag_eagle];
+  // ------ static movement -------
+
   rightWing.rotation.y = eagle_moves[1][flag_eagle];
   leftWing.rotation.y = -eagle_moves[1][flag_eagle];
 
@@ -164,6 +164,16 @@ function move_eagle(){
   upperBeak.rotation.x = -0.5* eagle_moves[2][flag_eagle];
   lowerBeak.rotation.x = 0.5 * eagle_moves[2][flag_eagle];
 
+  flag_eagle = (flag_eagle >= eagle_moves[0].length) ? 0 : flag_eagle+1;
+
+}
+
+
+function move_eagle(){
+
+
+// ------ dynamic movement -------
+
   // the additions at the end of each row put the absolute position relative to the initial eagle position
   body.position.x = eagle_moves[5][flag_eagle2] - 2;
   body.position.y = eagle_moves[6][flag_eagle2] + 180;
@@ -176,7 +186,7 @@ function move_eagle(){
 // -------- dynamic movement ------------
   if(startFly){
 
-  flag_eagle = (flag_eagle >= eagle_moves[0].length) ? 0 : flag_eagle+1;
+  //flag_eagle = (flag_eagle >= eagle_moves[0].length) ? 0 : flag_eagle+1;
   flag_eagle2 = (flag_eagle2 >= eagle_moves[6].length) ? 0 : flag_eagle2+1;
   flag_eagle3 = (flag_eagle3 >= eagle_moves[8].length) ? 0 : flag_eagle3+1;
   flag_eagle4 = (flag_eagle4 >= eagle_moves[8].length) ? 0 : flag_eagle4+1;
