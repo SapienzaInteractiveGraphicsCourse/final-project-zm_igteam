@@ -176,7 +176,7 @@ function move_eagle(){
 // -------- dynamic movement ------------
   if(startFly){
 
-  //flag_eagle = (flag_eagle >= eagle_moves[0].length) ? 0 : flag_eagle+1;
+  flag_eagle = (flag_eagle >= eagle_moves[0].length) ? 0 : flag_eagle+1;
   flag_eagle2 = (flag_eagle2 >= eagle_moves[6].length) ? 0 : flag_eagle2+1;
   flag_eagle3 = (flag_eagle3 >= eagle_moves[8].length) ? 0 : flag_eagle3+1;
   flag_eagle4 = (flag_eagle4 >= eagle_moves[8].length) ? 0 : flag_eagle4+1;
