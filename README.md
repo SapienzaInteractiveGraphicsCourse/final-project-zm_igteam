@@ -20,7 +20,7 @@ The eagle is the principal subject of the application. It starting from the tip 
     
 **S**: By pressing this button the first person view is activated. Anytime, the user is allowed to switch the first person view with the third person view during the all eagle animation. 
     
-**A**: By pressing this button the eagle scream is emitted. This is implement by using an \texttt{audio} (explained in Section~\ref{audio}). Every time the user click this button the scream is emitted.
+**A**: By pressing this button the eagle scream is emitted. Every time the user click this button the scream is emitted.
 
 
 ## A demo of the project is available at this link : 
