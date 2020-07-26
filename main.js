@@ -366,7 +366,7 @@ before to call the move vehicle function */
 // declaration of customized variable for the vehicle movement
     var value = 96;
     var angle = Math.PI/2;
-    var shift = 0.2;
+    var shift = 0.08;
     var i = 0;
     var turn;
     var move;
@@ -391,7 +391,7 @@ before to call the move vehicle function */
   if(carPink){
     var value = 95;
     var angle = Math.PI/2;
-    var shift = 0.5;
+    var shift = 0.3;
     var turn;
     var move;
 
@@ -414,7 +414,7 @@ before to call the move vehicle function */
   if(carLimo){
     var value = 95;
     var angle = Math.PI/2;
-    var shift = 0.4;
+    var shift = 0.1;
     var turn;
     var move;
 
@@ -461,7 +461,7 @@ before to call the move vehicle function */
   if(carPolice){
     var value = 102;
     var angle = Math.PI/2;
-    var shift = 0.4;
+    var shift = 0.17;
     var turn;
     var move;
 
@@ -485,7 +485,7 @@ before to call the move vehicle function */
   if(carBrown){
     var value = 105;
     var angle = Math.PI/2;
-    var shift = 0.5;
+    var shift = 0.2;
     var turn;
     var move;
 
@@ -508,7 +508,7 @@ before to call the move vehicle function */
   if(carRed){
     var value = 103;
     var angle = Math.PI/2;
-    var shift = 0.3;
+    var shift = 0.15;
     var turn;
     var move;
 
@@ -531,7 +531,7 @@ before to call the move vehicle function */
   if(carBlack){
     var value = 105;
     var angle = Math.PI/2;
-    var shift = 0.5;
+    var shift = 0.2;
     var turn;
     var move;
 
@@ -554,7 +554,7 @@ before to call the move vehicle function */
   if(carGreen){
     var value = 92;
     var angle = Math.PI/2;
-    var shift = 0.5;
+    var shift = 0.1;
     var turn;
     var move;
 
@@ -577,7 +577,7 @@ before to call the move vehicle function */
   if(carWhite){
     var value = 105;
     var angle = Math.PI/2;
-    var shift = 0.3;
+    var shift = 0.2;
     var turn;
     var move;
 
