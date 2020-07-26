@@ -444,7 +444,7 @@ before to call the move vehicle function */
     move4 += shift;
 
     if(move4 >= value-shift && move4 < value){turn4 += angle;  }
-    if(move4 >= (2*value)-shift && move4 < 2*value){turn4 += angle; move4+=10; }
+    if(move4 >= (2*value)-shift && move4 < 2*value){turn4 += angle; move4+=10; } // the addition in move helps in all the cases where the car has to make a non squared path
     if(move4 >= (3*value)-shift && move4 < 3*value){turn4 += angle; }
     if(move4 >= 4*value-shift && move4 < 4*value){ // if the square movement is complete we can restart it
       turn4 += angle;
@@ -468,7 +468,7 @@ before to call the move vehicle function */
     move5 += shift;
 
     if(move5 >= value-shift && move5 < value){turn5 += angle; }
-    if(move5 >= (2*value)-shift && move5 < 2*value){turn5 += angle; move5+=8; }
+    if(move5 >= (2*value)-shift && move5 < 2*value){turn5 += angle; move5+=8; } // the addition in move helps in all the cases where the car has to make a non squared path
     if(move5 >= (3*value)-shift && move5 < 3*value){turn5 += angle;}
     if(move5 >= 4*value-shift && move5 < 4*value){ // if the square movement is complete we can restart it
       turn5 += angle;
@@ -491,7 +491,7 @@ before to call the move vehicle function */
 
     move6 += shift;
 
-    if(move6 >= value-shift && move6 < value){turn6 += angle; move6+= 10;}
+    if(move6 >= value-shift && move6 < value){turn6 += angle; move6+= 10;} // the addition in move helps in all the cases where the car has to make a non squared path
     if(move6 >= (2*value)-shift && move6 < (2*value)){turn6 += angle; }
     if(move6 >= (3*value)-shift && move6 < (3*value)){turn6 += angle; move6+= 10;}
     if(move6 >= (4*value)-shift && move6 < (4*value)){
@@ -537,7 +537,7 @@ before to call the move vehicle function */
 
     move8 += shift;
 
-    if(move8 >= value-shift && move8 < value){turn8 += angle; move8 += 8;}
+    if(move8 >= value-shift && move8 < value){turn8 += angle; move8 += 8;} // the addition in move helps in all the cases where the car has to make a non squared path
     if(move8 >= (2*value)-shift && move8 < 2*value){turn8 += angle;  }
     if(move8 >= (3*value)-shift && move8 < 3*value){turn8 += angle; move8 += 8;}
     if(move8 >= 4*value-shift && move8 < 4*value){ // if the square movement is complete we can restart it
@@ -583,7 +583,7 @@ before to call the move vehicle function */
 
     move10 += shift;
 
-    if(move10 >= value-shift && move10 < value){turn10 += angle; move10+=7; }
+    if(move10 >= value-shift && move10 < value){turn10 += angle; move10+=7; } // the addition in move helps in all the cases where the car has to make a non squared path
     if(move10 >= (2*value)-shift && move10 < 2*value){turn10 += angle;  }
     if(move10 >= (3*value)-shift && move10 < 3*value){turn10 += angle; move10 += 7;}
     if(move10 >= 4*value-shift && move10 < 4*value){ // if the square movement is complete we can restart it

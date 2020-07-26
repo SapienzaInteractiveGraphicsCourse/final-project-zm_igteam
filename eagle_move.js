@@ -26,9 +26,9 @@ var startFly = false; // used to control the restarting of eagle movement
 
 
 
-// ------------------- points for the eagle movement ----------------------
+// ------------------- points for the eagle movement ---------------------- // the positions are considered wrt the 0,0,0
 //         p0  p1   p2    p3    p4    p5     p6    p7    p8    p9    p10   p11   p12   p13   p14   p15    p16   p17   p18   p19   p20  p21    p22   p23   p24   p25   p26  p27
-var bzX = [0,  0,    0,   -70,  -225, -225,  -70,   36,   50,   50,   50,   50,   50,   50,   180,  200,  200, -220, -220, -220,  170,  170,  150,  110,  90,   30,   58,  0];  // the positions are added to the 0,0,0
+var bzX = [0,  0,    0,   -70,  -225, -225,  -70,   36,   50,   50,   50,   50,   50,   50,   180,  200,  200, -220, -220, -220,  170,  170,  150,  110,  90,   30,   58,  0];
 var bzY = [0,  0, -220, -140, -140,  -140,  -140,  -130, -120, -100, -220,  60,  -140, -140, -140, -100, -100, -100, -100, -100, -100, -100, -120, -120,  -120, -100,  0,  0];
 var bzZ = [0,  20,  20,   20,   20,   165,   165,  165,  165,  176,  350,  350,  176, -180,  -64,   16,   450,  450,  16,  -150, -120,  -10,   35,   55,    55,  -65,  -10, 0];
 
@@ -148,7 +148,7 @@ eagle_moves = [lerp(2, 12, wingSpeed).concat(lerp(12, 2, wingSpeed)), // for the
 function move_eagle(){
 
 // ------ static movement -------
-  //body.position.y = eagle_moves[0][flag_eagle];
+  //body.position.y += eagle_moves[0][flag_eagle];
   rightWing.rotation.y = eagle_moves[1][flag_eagle];
   leftWing.rotation.y = -eagle_moves[1][flag_eagle];
 
@@ -164,6 +164,7 @@ function move_eagle(){
   upperBeak.rotation.x = -0.5* eagle_moves[2][flag_eagle];
   lowerBeak.rotation.x = 0.5 * eagle_moves[2][flag_eagle];
 
+  // the additions at the end of each row put the absolute position relative to the initial eagle position
   body.position.x = eagle_moves[5][flag_eagle2] - 2;
   body.position.y = eagle_moves[6][flag_eagle2] + 180;
   body.position.z = eagle_moves[7][flag_eagle2] - 115 ;
@@ -175,7 +176,7 @@ function move_eagle(){
 // -------- dynamic movement ------------
   if(startFly){
 
-  flag_eagle = (flag_eagle >= eagle_moves[0].length) ? 0 : flag_eagle+1;
+  //flag_eagle = (flag_eagle >= eagle_moves[0].length) ? 0 : flag_eagle+1;
   flag_eagle2 = (flag_eagle2 >= eagle_moves[6].length) ? 0 : flag_eagle2+1;
   flag_eagle3 = (flag_eagle3 >= eagle_moves[8].length) ? 0 : flag_eagle3+1;
   flag_eagle4 = (flag_eagle4 >= eagle_moves[8].length) ? 0 : flag_eagle4+1;
